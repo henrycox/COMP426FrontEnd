@@ -354,3 +354,11 @@ li.reps{
     cursor: pointer;
     transition: background .5s;
 }
+
+.namePhoto {
+    float: left;
+}
+
+.inputs {
+    float: right;
+}
