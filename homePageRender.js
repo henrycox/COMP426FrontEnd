@@ -6,6 +6,12 @@ async function renderHomePage() {
     $('.body').on("click", ".takePoll", handlePollButtonPress)
     $('.body').on("click", ".takeQuiz", handleQuizButtonPress)
     $('.body').on("click", ".logOut", handleLogoutButtonPress)
+    $('.body').on("click", ".updateaccount", handleUpdateAccountButtonPress);
+}
+
+function handleUpdateAccountButtonPress() {
+    //console.log('test');
+    window.location.href = "./updateAccount.html";
 }
 
 async function handleLogoutButtonPress() {
