@@ -113,7 +113,7 @@ const submitPoll = function(event) {
         }
     }
 
-    //console.log(data);
+    console.log(data);
 
     sendPollToDB(data, event);
 }
@@ -139,7 +139,7 @@ async function sendPollToDB(data, event) {
         },
       });
 
-    //console.log(result);
+    console.log(result);
 }
 
 const testfunction = function() {
