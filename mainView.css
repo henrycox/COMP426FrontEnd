@@ -295,6 +295,7 @@ li.tile{
 ul.news{
     min-width: 50px;
     list-style: none;
+    column-count: 3;
 }
 
 ul.news li{
@@ -306,10 +307,14 @@ ul.news li{
 }   
 
 ul.news li h1{
+    color: black;
     font-size: 16px;
     line-height: 15px;
 }
 
+ul.news a{
+    text-decoration: none;
+}
 
 /*REPRESENTATIVES ELEMENTS*/
 
