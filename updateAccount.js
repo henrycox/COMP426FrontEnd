@@ -6,7 +6,7 @@ async function deleteAccount() {
     //axios call
     const result = await axios({
         method: 'delete',
-        url: "http://localhost:3000/user",
+        url: "http://localhost:3030/user",
         withCredentials: true
       });
       
