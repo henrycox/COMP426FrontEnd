@@ -1,4 +1,3 @@
-const { data } = require("jquery");
 
 async function getRepresentatives() {
     let firstTime = false;
