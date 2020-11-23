@@ -2,16 +2,31 @@
 <html lang="eng">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
-    <!-- link to stylesheet here -->
+    <title>Polling Results</title>
+    <link href="mainView.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/axios/dist/axios.js"></script>
     <script src="pollingResults.js"></script>
 
-    <div id="root">
+    <div class="banner">
+        <div class="container">
+            <label>User Info:</label>
+            <button class="logOut" id="logout">Log Out</button>
+        </div>
+    </div>
+
+    <div class="pollingResults">
+        <div class="container">
+            <div id="root"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
         
     </div>
 
 </body>
+</html>

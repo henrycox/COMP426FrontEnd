@@ -2,14 +2,24 @@
 <html lang="eng">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
-    <!-- link to stylesheet here -->
+    <title>Polling</title>
+    <link href="mainView.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/axios/dist/axios.js"></script>
     <script src="pollingRender.js"></script>
 
+    <div class="banner">
+        <div class="container">
+            <label>User Info:</label>
+            <button class="logOut" id="logout">Log Out</button>
+        </div>
+    </div>
+
+    <div class="polling">
+        <div class="container">
+            
     <div id="root">
 
         <form id="president">
@@ -72,5 +82,12 @@
         <button class="submitpoll">Submit Poll</button>
 
     </div>
+        </div>
+    </div>
 
+    <div class="footer">
+        <p>This information is pulled from the Google Civic Engagement API. These values may not reflect the latest election results
+        </p>
+    </div>
 </body>
+</html>
