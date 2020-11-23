@@ -363,3 +363,8 @@ button.saveAll:hover {
 .inputs {
     float: right;
 }
+
+input#notes {
+    height: 30px;
+    width: 20px;
+}
