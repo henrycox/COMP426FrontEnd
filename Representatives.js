@@ -14,13 +14,13 @@ async function getRepresentatives() {
         url: 'https://limitless-spire-89622.herokuapp.com/userData',
         withCredentials: true,
       });
-      console.log(userData);
-      if(userData === null) {
+    console.log(userData);
+    if(userData.data == null) {
           let firstTime = true;
           console.log("newUser");
           renderRepresentatives(result.data.officials);
-      } else {
-          renderRepsAndNotes(result.data.officials, userData);
+    } else {
+        renderRepsAndNotes(result.data.officials, userData);
       }
 
 }
