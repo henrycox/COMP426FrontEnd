@@ -151,7 +151,6 @@ red
     border-radius: 4px;
     box-sizing: border-box;
     display: inline-block;
-
 }
 
 .fields h3 {
@@ -312,9 +311,24 @@ li.reps{
     margin-bottom: 20px;
 }
 
-.reps h2 {
-    font-size: 20px;
+.reps h1{
+    font-size: 10px;
     line-height: 20px;
+}
+
+.reps h2 {
+    font-size: 10px;
+    line-height: 20px;
+}
+
+.reps input[type="textfield"] {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: inline-block;  
 }
 
 .photo{
