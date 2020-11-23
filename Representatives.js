@@ -8,16 +8,17 @@ async function getRepresentatives() {
         method: 'get',
         url: address,
       });
-      console.log(result)
-      const userData = await axios({
+    console.log(result)
+    const userData = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/userData',
         withCredentials: true,
       });
-      if(result.data == null) {
-          let firstTime = true
+      if(userData === null) {
+          let firstTime = true;
+          renderRepresentatives(result.data.officials);
       } else {
-          
+          renderRepsAndNotes(result.data.officials, userData);
       }
 
 }
@@ -55,6 +56,10 @@ async function renderRepresentatives(results) {
     for(let i=0; i<7; i++){
         $reps.append('<li><img alt="photo of representative" src ="'+ results[i].photo+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
     }
+}
+
+async function renderRepsAndNotes(results){
+
 }
 
 
