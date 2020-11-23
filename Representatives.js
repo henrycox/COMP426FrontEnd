@@ -1,6 +1,4 @@
 
-
-
 async function getRepresentatives() {
     let firstTime = false
     let address = await formURL()
@@ -51,7 +49,13 @@ async function formURL() {
 }
 
 
-
+async function renderRepresentatives(results) {
+    const $reps = $('ul.reps');
+    console.log(results[0]);
+    for(let i=0; i<7; i++){
+        $reps.append('<li><img alt="photo of representative" src ="'+ results[i].photo+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
+    }
+}
 
 
 
