@@ -96,10 +96,10 @@ async function renderRepresentatives(results) {
 }
 
 async function renderRepsAndNotes(officials, userData ){
+    console.log(userData)
     const $reps = $('ul.reps');
-    console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+i+'" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes'+ i +'" value="'+ userData[i].notes +'"></div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ officials[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+i+'" value="'+ userData.notes[i].likelihood +'"><input type="textfield" id="notes'+ i +'" value="'+ userData.notes[i].notes +'"></div></li>');
     }
 }
 
