@@ -123,11 +123,11 @@ async function sendPollToDB(data, event) {
     event.preventDefault();
 
     //redirect to results page first
-    window.location.href = "http://localhost:3000/pollingResults.html";
+    window.location.href = "./pollingResults.html";
 
     const result = await axios({
         method: 'post',
-        url: "http://localhost:3030/pollEntry",
+        url: "https://limitless-spire-89622.herokuapp.com/pollEntry",
         data: {
             president: data.president,
             governor: data.governor,

@@ -4,7 +4,7 @@ async function getfromDB() {
 
     const result = await axios({
         method: 'get',
-        url: "http://localhost:3030/pollResults",
+        url: "https://limitless-spire-89622.herokuapp.com/pollResults",
       });
 
     //console.log(result);

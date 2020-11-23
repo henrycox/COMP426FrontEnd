@@ -39,7 +39,7 @@ async function handleCreateButtonPress(event) {
 async function sendCreateMessage(userData) {
     const result = await axios({
         method: 'post',
-        url: "http://localhost:3030/createUser",
+        url: "https://limitless-spire-89622.herokuapp.com/createUser",
         //withCredentials: true,
         data: {
             login: userData.username,
