@@ -6,7 +6,7 @@ async function deleteAccount() {
     //axios call
     const result = await axios({
         method: 'delete',
-        url: "https://limitless-spire-89622.herokuapp.com/user",
+        url: "http://localhost:3000/user",
         withCredentials: true
       });
       
