@@ -132,7 +132,7 @@ async function sendPollToDB(data, event) {
             president: data.president,
             governor: data.governor,
             NCsenator: data.NCsenator,
-            ALsenator: data.Alsenator,
+            ALsenator: data.ALsenator,
             AZsenator: data.AZsenator,
             MEsenator: data.MEsenator,
             approval: data.approval
