@@ -170,7 +170,7 @@ const submitQuiz = function(event) {
 
         //you are democrat
         //make async function for axios + redirect to democrat.html
-        republican();
+        democrat();
 
     } else {
         //alert telling user to fill out all questions
