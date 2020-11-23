@@ -66,6 +66,12 @@ async function handleSaveAllPress(event){
     for(let i=0; i<7; i++){
         let like = document.getElementById("likely" + i);
         let note = document.getElementById("notes" + i);
+        if (like.value == "") {
+            like.value = "Enter Likelihood"
+        }
+        if (note.value == "") {
+            note.value = "Enter Notes"
+        }
         noteFile.push({likelihood: like.value, notes: note.value});
     }
 
