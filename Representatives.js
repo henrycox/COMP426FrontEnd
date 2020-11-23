@@ -16,6 +16,7 @@ async function getRepresentatives() {
       });
       if(userData === null) {
           let firstTime = true;
+          console.log("newUser");
           renderRepresentatives(result.data.officials);
       } else {
           renderRepsAndNotes(result.data.officials, userData);
