@@ -42,5 +42,4 @@ async function renderNewsFeed(results) {
 
 $(function() {
     renderHomePage();
-
 });

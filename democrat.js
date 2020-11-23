@@ -1,16 +1,17 @@
-const returnHome = function(event) {
-    //console.log('test');
-    window.location.href = "homePage.html";
+
+async function renderDemocrat() {
+    $('.body').on("click", ".return", handleReturnHome);
+    $('.body').on("click", ".logOut", handleLogOut);
 }
 
-function loadIntoDOM() {
+function handleReturnHome() {
+    window.location.href = "./homePage.html"
+}
 
-    const $root = $('#root');
-
-    $root.on("click", ".return", returnHome);
-
+function handleLogOut() {
+    window.location.href = "./index.html"
 }
 
 $(function() {
-    loadIntoDOM();
+    renderDemocrat();
 });
