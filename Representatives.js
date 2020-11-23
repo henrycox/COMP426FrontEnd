@@ -2,7 +2,7 @@
 async function getRepresentatives() {
     const $body = $('.body');
     $('.body').on("click", ".return", handleReturnButtonPress)
-    $('.body').on("click", ".logout", handleLogoutButtonPress)
+    $('.body').on("click", ".logOut", handleLogoutButtonPress)
     let firstTime = false;
     let address = await formURL();
 
@@ -28,6 +28,7 @@ function handleReturnButtonPress() {
     window.location.href = "./homePage.html"
 }
 async function handleLogoutButtonPress() {
+    console.log("clicked")
     const result = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/logout',
