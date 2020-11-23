@@ -54,6 +54,8 @@ const returnHome = function() {
 
 function loadIntoDOM() {
 
+    const $root = $('#root');
+
     //get poll data & render poll results
     getPoll();
 
