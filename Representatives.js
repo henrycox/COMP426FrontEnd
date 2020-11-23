@@ -15,14 +15,13 @@ async function getRepresentatives() {
         withCredentials: true,
       });
     console.log(userData);
+
     if(userData.data == null) {
           let firstTime = true;
-          console.log("newUser");
           renderRepresentatives(result.data.officials);
     } else {
-        renderRepsAndNotes(result.data.officials, userData);
+        renderRepsAndNotes(result.data.officials, userData.data);
       }
-
 }
 
 async function formURL() {
@@ -51,21 +50,33 @@ async function formURL() {
     return url
 }
 
+async function handleSaveAllPress(event){
+    console.log("clicked save");
+
+
+
+}
 
 async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li><img alt="photo of representative" src ="'+ results[i].photo+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
+        $reps.append('<li class="reps"><img alt="photo of representative" src ="'+ results[i].photo+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
     }
 }
 
-async function renderRepsAndNotes(results){
-
+async function renderRepsAndNotes(officials, userData ){
+    const $reps = $('ul.reps');
+    console.log(results[0]);
+    for(let i=0; i<7; i++){
+        $reps.append('<li class="reps"><img alt="photo of representative" src ="'+ officals[i].photo+'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2><input type="textfield" id="likely" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes" value="'+ userData[i].notes +'"></li>');
+    }
 }
 
 
 
 $(function() {
     getRepresentatives();
+    const $body = $('.body');
+    $body.on("click",".saveAll", handleSaveAllPress);
 });

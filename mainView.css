@@ -291,3 +291,28 @@ ul.news li h1{
     font-size: 16px;
     line-height: 15px;
 }
+
+
+/*REPRESENTATIVES ELEMENTS*/
+
+.representatives ul {
+    list-style-type: none;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+li.reps{
+    border: 5px solid black;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reps h2 {
+    font-size: 20px;
+    line-height: 20px;
+}
