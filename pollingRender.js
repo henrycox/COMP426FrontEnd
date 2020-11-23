@@ -185,8 +185,20 @@ function loadIntoDOM() {
 
     //add listener to home button
     $('#body').on("click", ".return", returnHome);
+    $('.body').on("click", ".logOut", handleLogoutButtonPress)
     
 }
+
+async function handleLogoutButtonPress() {
+    console.log("clicked")
+    const result = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/logout',
+        withCredentials: true,
+      });
+    window.location.href = "./index.html"
+}
+
 
 $(function() {
     loadIntoDOM();
