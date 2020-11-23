@@ -61,7 +61,7 @@ async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><img alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
+        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
     }
 }
 
@@ -69,7 +69,7 @@ async function renderRepsAndNotes(officials, userData ){
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><img alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2><input type="textfield" id="likely" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes" value="'+ userData[i].notes +'"></li>');
+        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2><input type="textfield" id="likely" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes" value="'+ userData[i].notes +'"></li>');
     }
 }
 
