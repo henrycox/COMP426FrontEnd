@@ -164,7 +164,7 @@ async function sendPollToDB(data, event) {
 }
 
 const returnHome = function() {
-    window.location.href = "homePage.html";
+    window.location.href = "./homePage.html";
 }
 
 function loadIntoDOM() {
@@ -184,7 +184,7 @@ function loadIntoDOM() {
     $root.on("click", ".submitpoll", submitPoll);
 
     //add listener to home button
-    $root.on("click", ".return", returnHome);
+    $('#body').on("click", ".return", returnHome);
     
 }
 
