@@ -46,7 +46,7 @@ async function sendLoginMessage(username, password) {
     console.log("sending");
     const result = await axios({
         method: 'post',
-        url: "https://limitless-spire-89622.herokuapp.com//login",
+        url: "https://limitless-spire-89622.herokuapp.com/login",
         withCredentials: true,
         data: {
             login: username.value,
