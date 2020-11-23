@@ -14,12 +14,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "increasemilitaryspending") {
                 data.republican += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             } 
             if (radios[i].value == "decreasemilitaryspending") {
                 data.democrat += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             }            
         }
@@ -31,12 +31,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "pro-life") {
                 data.republican += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             } 
             if (radios[i].value == "pro-choice") {
                 data.democrat += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             }            
         }
@@ -48,12 +48,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             }            
         }
@@ -65,12 +65,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
-                console.log(radios[i].value);
+                //console.log(radios[i].value);
                 break;
             }            
         }
@@ -170,11 +170,11 @@ const submitQuiz = function(event) {
 
         //you are democrat
         //make async function for axios + redirect to democrat.html
-        republican();
+        democrat();
 
     } else {
         //alert telling user to fill out all questions
-
+        alert("Please answer every question before submitting quiz");
     }
 }
 
@@ -190,24 +190,48 @@ async function republican() {
         },
       });
 
-    
+    /*
     const test = await axios({
         method: 'get',
         url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
         withCredentials: true
     });
-
+    
     console.log(test);
+    */
 
     //changing page
-    //window.location.href = "republican.html";
-
+    window.location.href = "republican.html";
 }
 
 async function democrat() {
+    
+    //axios request
+    const result = await axios({
+        method: 'put',
+        url: "https://limitless-spire-89622.herokuapp.com/updateAffiliation",
+        withCredentials: true,
+        data: {
+            pa: "Democrat"
+        },
+      });
+
+    /*
+    const test = await axios({
+        method: 'get',
+        url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
+        withCredentials: true
+    });
+    
+    console.log(test);
+    */
 
     //changing page
     window.location.href = "democrat.html";
+}
+
+const returnHome = function() {
+    window.location.href = "homePage.html";
 }
 
 function loadIntoDOM() {
@@ -217,6 +241,9 @@ function loadIntoDOM() {
 
     //add listener to submit button
     $root.on("click", ".submitquiz", submitQuiz);
+
+    //add listener to home button
+    $root.on("click", ".return", returnHome);
 }
 
 $(function() {
