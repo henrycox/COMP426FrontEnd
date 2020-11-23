@@ -36,7 +36,7 @@ const renderGraph = function(data) {
         <p>Yes: ${data.approval.yes}</p>
         <p>No: ${data.approval.no}</p>
 
-        <button class="exit">exit</button>
+        <button class="return">Return to Home</button>
     </div>`;
 }
 
@@ -48,6 +48,10 @@ const getPoll = function() {
 
 }
 
+const returnHome = function() {
+    window.location.href = "homePage.html";
+}
+
 function loadIntoDOM() {
 
     //get poll data & render poll results
@@ -55,6 +59,8 @@ function loadIntoDOM() {
 
     //make a listener to return to the home page
     //make once homepage is developed
+
+    $root.on("click", ".return", returnHome);
 }
 
 $(function() {
