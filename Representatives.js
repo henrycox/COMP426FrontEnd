@@ -56,6 +56,7 @@ async function handleSaveAllPress(event){
     for(let i=0; i<7; i++){
         let like = document.getElementById("likely" + i);
         let note = document.getElementById("notes" + i);
+        console.log(like)
         console.log(note)
         noteFile.push({likelihood: like.value, notes: note.value});
     }
@@ -82,7 +83,7 @@ async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes '+ i +'" placeholder="notes"><div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes'+ i +'" placeholder="notes"><div></li>');
     }
 }
 
