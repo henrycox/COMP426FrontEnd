@@ -47,7 +47,7 @@ async function sendCreateMessage(userData) {
             address: userData.address,
             city: userData.city,
             state: userData.state,
-            zip: userData.zip
+            zip: userData.zip,
         }
       })
     return result

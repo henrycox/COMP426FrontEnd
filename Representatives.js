@@ -2,6 +2,7 @@
 
 
 async function getRepresentatives() {
+    let firstTime = false
     let address = await formURL()
 
     console.log(address)
@@ -10,7 +11,17 @@ async function getRepresentatives() {
         url: address,
       });
       console.log(result)
-    return result 
+      const userData = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/userData',
+        withCredentials: true,
+      });
+      if(result.data == null) {
+          let firstTime = true
+      } else {
+          
+      }
+
 }
 
 async function formURL() {
