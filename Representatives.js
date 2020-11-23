@@ -1,5 +1,8 @@
 
 async function getRepresentatives() {
+    const $body = $('.body');
+    $('.body').on("click", ".return", handleReturnButtonPress)
+    $('.body').on("click", ".logout", handleLogoutButtonPress)
     let firstTime = false;
     let address = await formURL();
 
@@ -19,6 +22,18 @@ async function getRepresentatives() {
     } else {
         renderRepsAndNotes(result.data.officials, userData.data);
       }
+}
+
+function handleReturnButtonPress() {
+    window.location.href = "./homePage.html"
+}
+async function handleLogoutButtonPress() {
+    const result = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/logout',
+        withCredentials: true,
+      });
+    window.location.href = "./index.html"
 }
 
 async function formURL() {
