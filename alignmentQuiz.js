@@ -190,21 +190,31 @@ async function republican() {
         },
       });
 
-    
+    /*
     const test = await axios({
         method: 'get',
         url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
         withCredentials: true
     });
-
+    
     console.log(test);
+    */
 
     //changing page
-    //window.location.href = "republican.html";
-
+    window.location.href = "republican.html";
 }
 
 async function democrat() {
+
+    //axios request
+    const result = await axios({
+        method: 'put',
+        url: "https://limitless-spire-89622.herokuapp.com/updateAffiliation",
+        withCredentials: true,
+        data: {
+            pa: "Democrat"
+        },
+      });
 
     //changing page
     window.location.href = "democrat.html";
