@@ -1,3 +1,4 @@
+const { data } = require("jquery");
 
 async function getRepresentatives() {
     let firstTime = false;
@@ -52,16 +53,36 @@ async function formURL() {
 
 async function handleSaveAllPress(event){
     console.log("clicked save");
+    let noteFile = [];
+    for(let i=0; i<7; i++){
+        let like = document.getElementById("likely" + i);
+        let note = document.getElementById("notes" + i);
+        noteFile.push({likelihood: like, notes: note});
+    }
 
+    console.log(noteFile);
 
+    let response = await sendNoteMessage(noteFile);
 
+}
+
+async function sendNoteMessage(noteFile) {
+    const result = await axios({
+        method: 'post',
+        url: "",
+        withCredentials: true,
+        data:{
+            notes: noteFile,
+        }
+    })
+    return result
 }
 
 async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely" placeholder="likelihood"><input type="textfield" id="notes" placeholder="notes"></li>');
+        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes '+ i +'" placeholder="notes"></li>');
     }
 }
 
@@ -69,7 +90,7 @@ async function renderRepsAndNotes(officials, userData ){
     const $reps = $('ul.reps');
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2><input type="textfield" id="likely" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes" value="'+ userData[i].notes +'"></li>');
+        $reps.append('<li class="reps"><img class="photo" alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2><input type="textfield" id="likely'+i+'" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes'+ i +'" value="'+ userData[i].notes +'"></li>');
     }
 }
 
