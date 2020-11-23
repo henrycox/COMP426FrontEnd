@@ -12,14 +12,16 @@ const submitQuiz = function(event) {
     //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
-            if (radios[i].value == "increasemillitaryspending") {
+            if (radios[i].value == "increasemilitaryspending") {
                 data.republican += 1;
+                console.log(radios[i].value);
+                break;
             } 
-            if (radios[i].value == "decreasemillitaryspending") {
+            if (radios[i].value == "decreasemilitaryspending") {
                 data.democrat += 1;
+                console.log(radios[i].value);
+                break;
             }            
-
-            break;
         }
     }
 
@@ -29,12 +31,14 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "pro-life") {
                 data.republican += 1;
+                console.log(radios[i].value);
+                break;
             } 
             if (radios[i].value == "pro-choice") {
                 data.democrat += 1;
+                console.log(radios[i].value);
+                break;
             }            
-
-            break;
         }
     }
 
@@ -44,12 +48,14 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
+                console.log(radios[i].value);
+                break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
+                console.log(radios[i].value);
+                break;
             }            
-
-            break;
         }
     }
 
@@ -59,12 +65,14 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
+                console.log(radios[i].value);
+                break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
+                console.log(radios[i].value);
+                break;
             }            
-
-            break;
         }
     }
 
@@ -74,12 +82,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "yes") {
                 data.republican += 1;
+                break;
             } 
             if (radios[i].value == "no") {
                 data.democrat += 1;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -89,12 +97,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
+                break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -104,12 +112,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "yes") {
                 data.republican += 1;
+                break;
             } 
             if (radios[i].value == "no") {
                 data.democrat += 1;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -119,12 +127,12 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
+                break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -134,14 +142,16 @@ const submitQuiz = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "no") {
                 data.republican += 1;
+                break;
             } 
             if (radios[i].value == "yes") {
                 data.democrat += 1;
+                break;
             }            
-
-            break;
         }
     }
+
+    console.log(data);
 
     /*
     compare republican and democrat votes
@@ -149,16 +159,55 @@ const submitQuiz = function(event) {
     for now, append the answer to the bottom of the page
         (can render a new page once its interacting with the backend)
     */
-    if (data.republican > data.democrat) {
+    if ((data.republican + data.democrat == 9) && data.republican > data.democrat) {
+        
         //you are republican
-
+        //make async function for axios + redirect to republican.html
+        republican();
         
 
-    } else {
+    } else if ((data.republican + data.democrat == 9) && data.democrat > data.republican) {
+
         //you are democrat
+        //make async function for axios + redirect to democrat.html
+        republican();
+
+    } else {
+        //alert telling user to fill out all questions
+
     }
+}
 
+async function republican() {
 
+    //axios request
+    const result = await axios({
+        method: 'put',
+        url: "https://limitless-spire-89622.herokuapp.com/updateAffiliation",
+        withCredentials: true,
+        data: {
+            pa: "Republican"
+        },
+      });
+
+    
+    const test = await axios({
+        method: 'get',
+        url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
+        withCredentials: true
+    });
+
+    console.log(test);
+
+    //changing page
+    //window.location.href = "republican.html";
+
+}
+
+async function democrat() {
+
+    //changing page
+    window.location.href = "democrat.html";
 }
 
 function loadIntoDOM() {
