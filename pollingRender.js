@@ -123,7 +123,7 @@ async function sendPollToDB(data, event) {
     event.preventDefault();
 
     //redirect to results page first
-    window.location.href = "./pollingResults.html";
+    //window.location.href = "./pollingResults.html";
 
     const result = await axios({
         method: 'post',

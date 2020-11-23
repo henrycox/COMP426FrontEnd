@@ -3,12 +3,18 @@ async function renderHomePage() {
     renderNewsFeed(newsFeed.data.results)
     const $body = $('.body');
     $('.body').on("click", ".reps", handleRepButtonPress)
+    $('.body').on("click", ".takePoll", handlePollButtonPress)
+    $('.body').on("click", ".takeQuiz", handleQuizButtonPress)
 }
 
 
-
+function handleQuizButtonPress() {
+    window.location.href = "./alignmentQuiz.html"
+}
     
-
+function handlePollButtonPress() {
+    window.location.href = "./polling.html"
+}
 
 function handleRepButtonPress() {
     window.location.href = "./Representatives.html"
