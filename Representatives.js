@@ -67,8 +67,8 @@ async function handleSaveAllPress(event){
 
 async function sendNoteMessage(noteFile) {
     const result = await axios({
-        method: 'post',
-        url: "",
+        method: 'put',
+        url: "https://limitless-spire-89622.herokuapp.com/userData",
         withCredentials: true,
         data:{
             notes: noteFile,
@@ -79,9 +79,17 @@ async function sendNoteMessage(noteFile) {
 
 async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
+    const result = await axios({
+        method: 'post',
+        url: "https://limitless-spire-89622.herokuapp.com/userData",
+        withCredentials: true,
+        data:{
+            notes: " ",
+        }
+    })
     console.log(results[0]);
     for(let i=0; i<7; i++){
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes '+ i +'" placeholder="notes"><div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes'+ i +'" placeholder="notes"><div></li>');
     }
 }
 
@@ -92,8 +100,6 @@ async function renderRepsAndNotes(officials, userData ){
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ officals[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+i+'" value="'+ userData[i].likelihood +'"><input type="textfield" id="notes'+ i +'" value="'+ userData[i].notes +'"></div></li>');
     }
 }
-
-
 
 $(function() {
     getRepresentatives();
