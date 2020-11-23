@@ -216,8 +216,16 @@ async function democrat() {
         },
       });
 
+    const test = await axios({
+        method: 'get',
+        url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
+        withCredentials: true
+    });
+    
+    console.log(test);
+
     //changing page
-    window.location.href = "democrat.html";
+    //window.location.href = "democrat.html";
 }
 
 function loadIntoDOM() {
