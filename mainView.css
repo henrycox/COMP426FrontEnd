@@ -346,8 +346,8 @@ button.saveAll {
     border: none;
     transition: background .5s;
     margin-top: 10px;
-    margin-bottom: 0;
-    float: right;
+    margin-bottom: 10px;
+    float: center;
 }
 
 button.saveAll:hover {
