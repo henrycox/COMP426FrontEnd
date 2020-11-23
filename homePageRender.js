@@ -20,8 +20,6 @@ function handleRepButtonPress() {
     window.location.href = "./Representatives.html"
 }
 
-
-
 async function retrieveNewsFeed() {
     const result = await axios({
         method: 'get',

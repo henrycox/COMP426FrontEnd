@@ -62,7 +62,7 @@ function loadIntoDOM() {
     //make a listener to return to the home page
     //make once homepage is developed
 
-    $root.on("click", ".return", returnHome);
+    $('#body').on("click", ".return", returnHome);
 }
 
 $(function() {
