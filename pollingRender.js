@@ -8,18 +8,23 @@ const submitPoll = function(event) {
     //create data object to submit later in axios request
     let data = {};
 
+    //count to make sure every choice is filled out
+    let count = 0;
+
     let radios = document.getElementsByName('president');
     //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "donaldtrump") {
                 data.president = "DonaldTrump";
+                count++;
+                break;
             } 
             if (radios[i].value == "joebiden") {
                 data.president = "JoeBiden";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -29,12 +34,14 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "danforest") {
                 data.governor = "DanForest";
+                count++;
+                break;
             } 
             if (radios[i].value == "roycooper") {
                 data.governor = "RoyCooper";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -44,12 +51,14 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "thomtillis") {
                 data.NCsenator = "ThomTillis";
+                count++;
+                break;
             } 
             if (radios[i].value == "calcunningham") {
                 data.NCsenator = "CalCunningham";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -59,12 +68,14 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "tommytuberville") {
                 data.ALsenator = "TommyTuberville";
+                count++;
+                break;
             } 
             if (radios[i].value == "dougjones") {
                 data.ALsenator = "DougJones";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -74,12 +85,14 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "marthamcsally") {
                 data.AZsenator = "MarthaMcsally";
+                count++;
+                break;
             } 
             if (radios[i].value == "markkelly") {
                 data.AZsenator = "MarkKelly";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -89,12 +102,14 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "susancollins") {
                 data.MEsenator = "SusanCollins";
+                count++;
+                break;
             } 
             if (radios[i].value == "saragideon") {
                 data.MEsenator = "SaraGideon";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
@@ -104,18 +119,24 @@ const submitPoll = function(event) {
         if (radios[i].checked) {
             if (radios[i].value == "yes") {
                 data.approval = "yes";
+                count++;
+                break;
             } 
             if (radios[i].value == "no") {
                 data.approval = "no";
+                count++;
+                break;
             }            
-
-            break;
         }
     }
 
     //console.log(data);
 
-    sendPollToDB(data, event);
+    if(count >= 7) {
+        sendPollToDB(data, event);
+    } else {
+        alert("Please answer every question before submitting quiz");
+    }
 }
 
 async function sendPollToDB(data, event) {
@@ -142,8 +163,8 @@ async function sendPollToDB(data, event) {
     //console.log(result);
 }
 
-const testfunction = function() {
-    console.log('test');
+const returnHome = function() {
+    window.location.href = "homePage.html";
 }
 
 function loadIntoDOM() {
@@ -156,11 +177,14 @@ function loadIntoDOM() {
     //return list of every form:
     //$root.children()
 
-    let test = document.getElementsByName('president');
+    //let test = document.getElementsByName('president');
     //console.log(test);
 
     //add listener to submit button
     $root.on("click", ".submitpoll", submitPoll);
+
+    //add listener to home button
+    $root.on("click", ".return", returnHome);
     
 }
 
