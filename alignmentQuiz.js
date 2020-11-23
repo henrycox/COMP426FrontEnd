@@ -243,7 +243,7 @@ function loadIntoDOM() {
     $root.on("click", ".submitquiz", submitQuiz);
 
     //add listener to home button
-    $root.on("click", ".return", returnHome);
+    $('.body').on("click", ".return", returnHome);
 }
 
 $(function() {

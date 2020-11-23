@@ -235,7 +235,7 @@ button.return:hover {
 }
 
 
-.homePage, .representatives, .pollingResults, .polling, .republican , .democrat {
+.homePage, .representatives, .pollingResults, .polling, .republican , .democrat , .alignmentQuiz{
     background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
     no-repeat center center;
     background-size: cover;

@@ -35,8 +35,6 @@ const renderGraph = function(data) {
         <h4>Approval</h4>
         <p>Yes: ${data.approval.yes}</p>
         <p>No: ${data.approval.no}</p>
-
-        <button class="return">Return to Home</button>
     </div>`;
 }
 
