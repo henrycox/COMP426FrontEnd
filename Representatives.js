@@ -83,7 +83,7 @@ async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     const result = await axios({
         method: 'post',
-        url: "http://limitless-spire-89622.herokuapp.com/userData",
+        url: "https://limitless-spire-89622.herokuapp.com/userData",
         withCredentials: true,
         data:{
             notes: " ",
