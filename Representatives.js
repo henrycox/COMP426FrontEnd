@@ -3,18 +3,15 @@ async function getRepresentatives() {
     let firstTime = false;
     let address = await formURL();
 
-    console.log(address);
     const result = await axios({
         method: 'get',
         url: address,
       });
-    console.log(result);
     const userData = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/userData',
         withCredentials: true,
       });
-    console.log(userData);
 
     if(userData.data == null) {
           let firstTime = true;
@@ -30,7 +27,6 @@ async function formURL() {
         url: 'https://limitless-spire-89622.herokuapp.com/userpersonalinfo',
         withCredentials: true,
       });
-    console.log(result)
     address = result.data.address.split(" ")
     city = result.data.city.split(" ")
     state = result.data.state
@@ -46,22 +42,16 @@ async function formURL() {
     url = url + zip
     key = '&key=AIzaSyBMSC-3HHlKMug6RgB7_5bthnwm6jLfU68'
     url = url + key
-    console.log(url)
     return url
 }
 
 async function handleSaveAllPress(event){
-    console.log("clicked save");
     let noteFile = [];
     for(let i=0; i<7; i++){
         let like = document.getElementById("likely" + i);
         let note = document.getElementById("notes" + i);
-        console.log(like)
-        console.log(note)
         noteFile.push({likelihood: like.value, notes: note.value});
     }
-
-    console.log(noteFile);
 
     let response = await sendNoteMessage(noteFile);
 
@@ -89,14 +79,12 @@ async function renderRepresentatives(results) {
             notes: " ",
         }
     })
-    console.log(results[0]);
     for(let i=0; i<7; i++){
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"<h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes'+ i +'" placeholder="notes"><div></li>');
     }
 }
 
 async function renderRepsAndNotes(officials, userData ){
-    console.log(userData)
     const $reps = $('ul.reps');
     for(let i=0; i<7; i++){
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ officials[i].photoUrl +'"<h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+i+'" value="'+ userData.notes[i].likelihood +'"><input type="textfield" id="notes'+ i +'" value="'+ userData.notes[i].notes +'"></div></li>');
