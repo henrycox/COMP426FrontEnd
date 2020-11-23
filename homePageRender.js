@@ -5,9 +5,18 @@ async function renderHomePage() {
     $('.body').on("click", ".reps", handleRepButtonPress)
     $('.body').on("click", ".takePoll", handlePollButtonPress)
     $('.body').on("click", ".takeQuiz", handleQuizButtonPress)
+    $('.body').on("click", ".logOut", handleLogoutButtonPress)
 }
 
-
+async function handleLogoutButtonPress() {
+    console.log("clicked")
+    const result = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/logout',
+        withCredentials: true,
+      });
+    window.location.href = "./index.html"
+}
 function handleQuizButtonPress() {
     window.location.href = "./alignmentQuiz.html"
 }
