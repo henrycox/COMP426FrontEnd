@@ -1,0 +1,293 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 940px;
+    padding: 0 10px;
+}
+/* blue #2e7ef8
+red 
+*/
+
+/*INDEX ELEMENTS*/
+
+.banner {
+    background: #f83036;
+    height: 80px;
+}
+
+.header {
+    background: url(https://d3i6fh83elv35t.cloudfront.net/static/2020/09/electoral-calculator-cover.png)
+    no-repeat center center;
+    background-size: cover;
+    height: 850px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: -50px;
+}
+
+.header .container {
+    position: relative;
+    top: 100px;
+}
+
+.header h1 {
+    color: black;
+    line-height: 100px;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+
+.header h2{
+    color: black;
+    line-height: 70px;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.header p {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.Enter {
+    color: white;
+    background: black;
+    padding: 20px 60px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background .5s;
+}
+
+.Enter:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.footer {
+    background: #2e7ef8;
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.footer h3 {
+    color: black;
+    font-size: 20px;
+    line-height: 10px;
+    padding: 10px 0px;
+}
+
+.footer p {
+    color: black;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+@media (min-width: 850px) {
+    .header h1 {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 50px;
+        line-height: 64px;
+    }
+
+    .main img {
+        width: 100%;
+    }
+}
+
+/*LOGIN ELEMENTS*/
+
+.banner h2 {
+    color: black;
+    margin-top: 0px;
+    line-height: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.fields {
+    background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
+    no-repeat center center;
+    background-size: cover;
+    height: 800px;  
+    padding: 10px 0px;
+}
+
+.fields label{
+    line-height: 20px;
+}
+
+.fields input[type=textfield], [type=password]  {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+
+}
+
+.fields h3 {
+    color: #f83036;
+    margin-bottom: 0;
+}
+
+.fields p {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}
+
+.fields button {
+    color: white;
+    background: black;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin: 10px 0px;
+}
+
+.fields button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+/*CREATEACCOUNT ELEMENTS*/
+
+.fields select{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/*HOMEPAGE ELEMENTS*/
+
+.banner button {
+    color: white;
+    background: black;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-top: 10px;
+    margin-bottom: 0;
+    float: right;
+}
+
+.banner button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: background .5s;
+}
+
+.homePage {
+    background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
+    no-repeat center center;
+    background-size: cover;
+    height: 800px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.homePage .container {
+    position: relative;
+    top: 50px;
+}
+
+.homePage ul {
+    list-style-type: none;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+li.tile{
+    border: 5px solid black;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tile h2 {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.tileC button{
+    color: white;
+    background: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    border: none;
+    transition: background .5s;
+    margin-bottom: 10px;
+}
+
+.tile button:hover{
+    background: white;
+    color: black;
+}
+
+.newTable{
+    display: table;
+    margin: 0 auto;
+}
+
+ul.news{
+    min-width: 50px;
+    list-style: none;
+}
+
+ul.news li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}   
+
+ul.news li h1{
+    font-size: 16px;
+    line-height: 15px;
+}

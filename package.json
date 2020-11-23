@@ -1,0 +1,23 @@
+{
+  "name": "comp426frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrycox/COMP426FrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrycox/COMP426FrontEnd/issues"
+  },
+  "homepage": "https://github.com/henrycox/COMP426FrontEnd#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "jquery": "^3.5.1"
+  }
+}
