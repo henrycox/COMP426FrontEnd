@@ -9,7 +9,6 @@ function handleReturnButtonPress() {
 }
 
 async function handleCreateButtonPress(event) {
-    console.log("clicked button")
     username = document.getElementById("username")
     password = document.getElementById("password")
     address = document.getElementById("address")
@@ -27,7 +26,6 @@ async function handleCreateButtonPress(event) {
     }
 
     let response = await sendCreateMessage(userData)
-    console.log(response)
 
     if (response.data == "User Already Exists") {
         renderUserExists();

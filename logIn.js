@@ -11,21 +11,14 @@ async function handleCreateButtonPress(event) {
 
 
 async function handleLoginButtonPress(event) {
-    console.log("clicked button")
     username = document.getElementById("username")
     password = document.getElementById("password")
     let response = await sendLoginMessage(username, password)
-    console.log(response)
     if (response.data == "Not Found") {
         renderUserNotFound()
     } else if (response.data == "unauthorized") {
         renderIncorrectPassword()
     } else if (response.data == true) {
-        /* let sessionUser = {
-            user: username.value
-        }
-        sessionStorage.setItem("user", sessionUser);
-        let user = sessionStorage.getItem("user") */
         window.location.href = "./homePage.html"
     }
 }
@@ -43,7 +36,6 @@ function renderIncorrectPassword() {
 
 
 async function sendLoginMessage(username, password) {
-    console.log("sending");
     const result = await axios({
         method: 'post',
         url: "https://limitless-spire-89622.herokuapp.com/login",
@@ -55,13 +47,6 @@ async function sendLoginMessage(username, password) {
       })
     return result
 }
-
-
-
-
-
-
-
 
 $(function() {
     onLoginLoad();

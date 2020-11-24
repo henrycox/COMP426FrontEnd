@@ -24,7 +24,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('governor');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "danforest") {
@@ -41,7 +40,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('ncsenator');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "thomtillis") {
@@ -58,7 +56,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('alsenator');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "tommytuberville") {
@@ -75,7 +72,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('azsenator');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "marthamcsally") {
@@ -92,7 +88,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('mesenator');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "susancollins") {
@@ -109,7 +104,6 @@ const submitPoll = function(event) {
     }
 
     radios = document.getElementsByName('approval');
-    //console.log(radios);
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             if (radios[i].value == "yes") {
@@ -124,9 +118,6 @@ const submitPoll = function(event) {
             }            
         }
     }
-
-    //console.log(data);
-
     if(count >= 7) {
         sendPollToDB(data, event);
     } else {
@@ -154,8 +145,6 @@ async function sendPollToDB(data, event) {
             approval: data.approval
         },
       });
-
-    //console.log(result);
 }
 
 const returnHome = function() {
@@ -165,15 +154,7 @@ const returnHome = function() {
 function loadIntoDOM() {
     //root element
     const $root = $('#root');
-    //console.log($root.children());
-
     //html page displays the poll for the candidates
-
-    //return list of every form:
-    //$root.children()
-
-    //let test = document.getElementsByName('president');
-    //console.log(test);
 
     //add listener to submit button
     $root.on("click", ".submitpoll", submitPoll);
@@ -185,7 +166,6 @@ function loadIntoDOM() {
 }
 
 async function handleLogoutButtonPress() {
-    console.log("clicked")
     const result = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/logout',

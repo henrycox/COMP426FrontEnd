@@ -1,13 +1,9 @@
 async function getfromDB() {
-
-    //console.log('test 2');
-
     const result = await axios({
         method: 'get',
         url: "https://limitless-spire-89622.herokuapp.com/pollResults",
       });
 
-    //console.log(result);
     $('#root').append(renderGraph(result.data));
 }
 
@@ -38,11 +34,7 @@ const renderGraph = function(data) {
 }
 
 const getPoll = function() {
-
-    //console.log('test');
-
     getfromDB();
-
 }
 
 const returnHome = function() {
@@ -57,8 +49,6 @@ function loadIntoDOM() {
     getPoll();
 
     //make a listener to return to the home page
-    //make once homepage is developed
-
     $('#body').on("click", ".return", returnHome);
 }
 

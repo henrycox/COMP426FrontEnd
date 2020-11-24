@@ -1,8 +1,4 @@
 async function deleteAccount() {
-
-    //console.log('test');
-
-    
     //axios call
     const result = await axios({
         method: 'delete',
@@ -10,7 +6,6 @@ async function deleteAccount() {
         withCredentials: true
       });
       
-
     //now send back to login page
     window.location.href="./login.html";
 }
@@ -18,9 +13,7 @@ async function deleteAccount() {
 async function updatePassword(event) {
     event.preventDefault();
 
-    //let newpass = $('#newpassword').attr("value");
     let newpass = document.getElementById("newpassword").value;
-    //console.log(newpass);
 
     //axios call
     const result = await axios({

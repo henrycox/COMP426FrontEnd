@@ -15,7 +15,6 @@ async function getRepresentatives() {
         url: 'https://limitless-spire-89622.herokuapp.com/userData',
         withCredentials: true,
       });
-    console.log(userData)
     if(userData.data == null) {
           let firstTime = true;
           renderRepresentatives(result.data);
@@ -28,7 +27,6 @@ function handleReturnButtonPress() {
     window.location.href = "./homePage.html"
 }
 async function handleLogoutButtonPress() {
-    console.log("clicked")
     const result = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/logout',
@@ -68,7 +66,6 @@ async function handleSaveAllPress(){
         let note = document.getElementById("notes" + i);
         if (like.value == "") {
             like.value = "How Likely to get your vote?"
-            console.log('got here')
         }
         if (note.value == "") {
             note.value = "Record your thoughts:"
@@ -99,9 +96,6 @@ async function renderRepresentatives(data) {
         let note = "Record your thoughts:"
         noteFile.push({likelihood: like, notes: note});
     }
-
-
-
     const $reps = $('ul.reps');
     const result = await axios({
         method: 'post',
@@ -149,9 +143,7 @@ async function renderRepresentatives(data) {
 
 async function renderRepsAndNotes(offData, userData ){
     let officials = offData.officials;
-    const $reps = $('ul.reps');
-    console.log(offData);
-    
+    const $reps = $('ul.reps');    
     for(let i=0; i<7; i++){
         let photo = "";
         if(officials[i].photoUrl == null) {
@@ -164,7 +156,6 @@ async function renderRepsAndNotes(offData, userData ){
 
 
     var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somewhat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
-        console.log("got here")
         $("#likely0").autocomplete({
             source: likely
           });

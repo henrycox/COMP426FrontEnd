@@ -10,12 +10,10 @@ async function renderHomePage() {
 }
 
 function handleUpdateAccountButtonPress() {
-    //console.log('test');
     window.location.href = "./updateAccount.html";
 }
 
 async function handleLogoutButtonPress() {
-    console.log("clicked")
     const result = await axios({
         method: 'get',
         url: 'https://limitless-spire-89622.herokuapp.com/logout',
@@ -47,7 +45,6 @@ async function retrieveNewsFeed() {
 
 async function renderNewsFeed(results) {
     const $news = $('ul.news');
-    console.log(results[0]);
     for(let i=0; i<3; i++){
         $news.append('<li class="NYT"><a class="sourceLink" href="'+ results[i].short_url +'"><img alt="News source thumbnail" src=" '+ results[i].multimedia[1].url +'"><h1>'+ results[i].title+'</h1></a>');
     }
