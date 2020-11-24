@@ -148,7 +148,7 @@ async function renderRepresentatives(data) {
 }
 
 async function renderRepsAndNotes(offData, userData ){
-    let officials = offData.officals;
+    let officials = offData.officials;
     const $reps = $('ul.reps');
     console.log(offData);
     
