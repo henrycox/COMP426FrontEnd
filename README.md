@@ -9,9 +9,13 @@ This website aims to engages citizens with their representatives by providing th
 ## Usage
 
 This website begins at the index.html page where users enter the site and can log in or create an account.
+
 Upon logging in, users go to homePage.html where they can make notes on thier representatives, take the sitewide poll or an alignment quiz and see the most recent news from the New York Times.  
+
 When makeing notes about representatives, users can save thier preferences or return to the homepage.
+
 After completing the alignment quiz or the polls, users are shown the results.
+
 Users can logout or return to the homePage at any time with the buttons at the top of the screen. 
 
 ## Contributions
