@@ -161,6 +161,7 @@ async function renderRepsAndNotes(officials, userData ){
 
 
     var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
+        console.log("got here")
         $("#likely0").autocomplete({
             source: likely
           });
