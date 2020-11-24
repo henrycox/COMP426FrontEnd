@@ -124,6 +124,25 @@ async function renderRepresentatives(results) {
         $("#likely0").autocomplete({
             source: likely
           });
+          $("#likely1").autocomplete({
+            source: likely
+          });
+          $("#likely2").autocomplete({
+            source: likely
+          });
+          $("#likely3").autocomplete({
+            source: likely
+          });
+          $("#likely4").autocomplete({
+            source: likely
+          });
+          $("#likely5").autocomplete({
+            source: likely
+          });
+          $("#likely6").autocomplete({
+            source: likely
+          });
+
 }
 
 async function renderRepsAndNotes(officials, userData ){
@@ -142,7 +161,25 @@ async function renderRepsAndNotes(officials, userData ){
 
 
     var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
-        $("#likely0" ).autocomplete({
+        $("#likely0").autocomplete({
+            source: likely
+          });
+          $("#likely1").autocomplete({
+            source: likely
+          });
+          $("#likely2").autocomplete({
+            source: likely
+          });
+          $("#likely3").autocomplete({
+            source: likely
+          });
+          $("#likely4").autocomplete({
+            source: likely
+          });
+          $("#likely5").autocomplete({
+            source: likely
+          });
+          $("#likely6").autocomplete({
             source: likely
           });
 
