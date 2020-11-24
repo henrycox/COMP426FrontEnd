@@ -36,6 +36,10 @@ async function updatePassword(event) {
     window.location.href="./login.html";
 }
 
+function returnToHome() {
+    window.location.href="homePage.html";
+}
+
 
 function loadIntoDom() {
 
@@ -46,6 +50,9 @@ function loadIntoDom() {
 
     //listener for update password
     $root.on("click", ".updatepassword", updatePassword);
+
+    //listener for return home
+    $root.on("click", ".return", returnToHome);
 
 }
 
