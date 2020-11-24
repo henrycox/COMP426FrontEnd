@@ -40,7 +40,7 @@ async function handleLogoutButtonPress() {
 async function formURL() {
     const result = await axios({
         method: 'get',
-        url: 'http://localhost:3030/userpersonalinfo',
+        url: 'https://limitless-spire-89622.herokuapp.com/userpersonalinfo',
         withCredentials: true,
       });
     address = result.data.address.split(" ")
@@ -96,7 +96,7 @@ async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     const result = await axios({
         method: 'post',
-        url: "http:localhost:3030/userData",
+        url: "https://limitless-spire-89622.herokuapp.com/userData",
         withCredentials: true,
         data:{
             notes: " ",
