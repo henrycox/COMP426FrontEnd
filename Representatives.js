@@ -17,9 +17,9 @@ async function getRepresentatives() {
       });
     if(userData.data == null) {
           let firstTime = true;
-          renderRepresentatives(result.data);
+          renderRepresentatives(result.data.officials);
     } else {
-        renderRepsAndNotes(result.data, userData.data);
+        renderRepsAndNotes(result.data.officials, userData.data);
       }
 }
 
@@ -89,7 +89,7 @@ async function sendNoteMessage(noteFile) {
     return result
 }
 
-async function renderRepresentatives(data) {
+async function renderRepresentatives(results) {
     let noteFile = [];
     for(let i=0; i<7; i++){
         let like = "How Likely to get your vote?"
@@ -105,7 +105,7 @@ async function renderRepresentatives(data) {
             notes: noteFile,
         }
     })
-    let results = data.officials;
+    let data = ["President of the United States", "Vice President of the United States, U.S. Senator, U.S. Senator, U.S. Representative, Governor, Lieutenant Governor"];
     for(let i=0; i<7; i++){
         let photo = "";
         if(results[i].photoUrl == null) {
@@ -141,8 +141,8 @@ async function renderRepresentatives(data) {
 
 }
 
-async function renderRepsAndNotes(offData, userData ){
-    let officials = offData.officials;
+async function renderRepsAndNotes(officials, userData ){
+    let offData = ["President of the United States", "Vice President of the United States, U.S. Senator, U.S. Senator, U.S. Representative, Governor, Lieutenant Governor"];
     const $reps = $('ul.reps');    
     for(let i=0; i<7; i++){
         let photo = "";
