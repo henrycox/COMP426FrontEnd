@@ -25,12 +25,12 @@ async function handleLoginButtonPress(event) {
 
 function renderUserNotFound() {
     const $alert = $('div.alert');
-    $alert.append('<h3>User not found. Click Create Account to join!</h3>');
+    $alert.replaceWith('<div class = alert><h3>User not found. Click Create Account to join!</h3></div>');
 }
 
 function renderIncorrectPassword() {
     const $alert = $('div.alert');
-    $alert.append('<h3>Incorrect password was entered</h3><br><p>Remember letters are case-sensitive.</p>');
+    $alert.replaceWith('<div class = alert><h3>Incorrect password was entered</h3><br><p>Remember letters are case-sensitive.</p></div>');
 }
 
 

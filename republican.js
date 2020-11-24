@@ -8,7 +8,12 @@ function handleReturnHome() {
     window.location.href = "./homePage.html"
 }
 
-function handleLogOut() {
+async function handleLogOut() {
+    const result = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/logout',
+        withCredentials: true,
+      });
     window.location.href = "./index.html"
 }
 

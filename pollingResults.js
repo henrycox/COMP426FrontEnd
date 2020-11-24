@@ -27,7 +27,7 @@ const renderGraph = function(data) {
         <h4>ME Senator</h4>
         <p>Susan Collins: ${data.MEsenator.susanCollins}</p>
         <p>Sara Gideon: ${data.MEsenator.saraGideon}</p>
-        <h4>Approval</h4>
+        <h4>Should Trump contest results?:</h4>
         <p>Yes: ${data.approval.yes}</p>
         <p>No: ${data.approval.no}</p>
     </div>`;
@@ -50,6 +50,16 @@ function loadIntoDOM() {
 
     //make a listener to return to the home page
     $('#body').on("click", ".return", returnHome);
+    $('#body').on("click", ".logOut", handleLogoutButtonPress)
+}
+
+async function handleLogoutButtonPress() {
+    const result = await axios({
+        method: 'get',
+        url: 'https://limitless-spire-89622.herokuapp.com/logout',
+        withCredentials: true,
+      });
+    window.location.href = "./index.html"
 }
 
 $(function() {
