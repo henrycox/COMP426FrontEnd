@@ -443,7 +443,7 @@ button.updatepassword:hover {
     cursor: pointer;
 }
 
-button.delete, button.submitquiz {
+button.delete, button.submitquiz, button.submitpoll {
     color: white;
     background: black;
     font-size: 20px;
@@ -454,7 +454,7 @@ button.delete, button.submitquiz {
     margin-bottom: 0;
 }
 
-button.delete:hover , button.submitquiz:hover{
+button.delete:hover , button.submitquiz:hover , button.submitpoll:hover{
     background: white;
     color: black;
     cursor: pointer;
