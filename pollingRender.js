@@ -161,7 +161,7 @@ function loadIntoDOM() {
 
     //add listener to home button
     $('#body').on("click", ".return", returnHome);
-    $('.body').on("click", ".logOut", handleLogoutButtonPress)
+    $('#body').on("click", ".logOut", handleLogoutButtonPress)
     
 }
 

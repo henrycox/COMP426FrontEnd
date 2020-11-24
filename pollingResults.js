@@ -50,7 +50,7 @@ function loadIntoDOM() {
 
     //make a listener to return to the home page
     $('#body').on("click", ".return", returnHome);
-    $('.body').on("click", ".logOut", handleLogoutButtonPress)
+    $('#body').on("click", ".logOut", handleLogoutButtonPress)
 }
 
 async function handleLogoutButtonPress() {
