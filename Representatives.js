@@ -95,9 +95,9 @@ async function sendNoteMessage(noteFile) {
 async function renderRepresentatives(results) {
     let noteFile = [];
     for(let i=0; i<7; i++){
-        like.value = "How Likely to get your vote?"
-        note.value = "Record your thoughts:"
-        noteFile.push({likelihood: like.value, notes: note.value});
+        let like = "How Likely to get your vote?"
+        let note = "Record your thoughts:"
+        noteFile.push({likelihood: like, notes: note});
     }
 
 
