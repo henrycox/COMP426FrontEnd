@@ -104,7 +104,7 @@ async function renderRepresentatives(results) {
     })
     for(let i=0; i<7; i++){
         if(results[i].photoUrl == null) {
-            let photo = 
+            
         }
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ results[i].photoUrl+'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><input type="textfield" id="likely'+ i +'" placeholder="likelihood"><input type="textfield" id="notes'+ i +'" placeholder="notes"><div></li>');
     }
