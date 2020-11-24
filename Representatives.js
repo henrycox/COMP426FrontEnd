@@ -105,7 +105,7 @@ async function renderRepresentatives(results) {
             notes: noteFile,
         }
     })
-    let data = ["President of the United States", "Vice President of the United States, U.S. Senator, U.S. Senator, U.S. Representative, Governor, Lieutenant Governor"];
+    let data = ["President of the United States", "Vice President of the United States", "U.S. Senator", "U.S. Senator", "U.S. Representative", "Governor", "Lieutenant Governor"];
     for(let i=0; i<7; i++){
         let photo = "";
         if(results[i].photoUrl == null) {
@@ -142,7 +142,7 @@ async function renderRepresentatives(results) {
 }
 
 async function renderRepsAndNotes(officials, userData ){
-    let offData = ["President of the United States", "Vice President of the United States, U.S. Senator, U.S. Senator, U.S. Representative, Governor, Lieutenant Governor"];
+    let offData = ["President of the United States", "Vice President of the United States", "U.S. Senator", "U.S. Senator", "U.S. Representative", "Governor", "Lieutenant Governor"];
     const $reps = $('ul.reps');    
     for(let i=0; i<7; i++){
         let photo = "";
