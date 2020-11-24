@@ -53,10 +53,10 @@ async function renderNewsFeed(results) {
         title = long;
     }
     else {
-        title += long.slice(0,80)
+        title += long.slice(0,60)
         title += "..."
     }
-        $news.append('<li class="NYT"><a class="sourceLink" href="'+ results[i].short_url +'"><img alt="News source thumbnail" src=" '+ results[i].multimedia[1].url +'"><h1>'+ title+'</h1></a></li><br>');
+        $news.append('<li class="NYT"><a class="sourceLink" href="'+ results[i].short_url +'"><img alt="News source thumbnail" src=" '+ results[i].multimedia[1].url +'"><h1>'+ title+'</h1></a></li>');
     }
 };
 
