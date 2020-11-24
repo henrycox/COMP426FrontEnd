@@ -300,6 +300,7 @@ li.tile{
 .newTable{
     display: table;
     margin: 0 auto;
+    height: 500px;
 }
 
 ul.news{
