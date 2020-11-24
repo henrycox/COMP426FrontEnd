@@ -383,6 +383,14 @@ button.saveAll:hover {
     float: left;
 }
 
+.namePhoto h1{
+    font-size: 18px;
+}
+
+.namePhoto h2{
+    font-size: 14px;
+}
+
 .inputs {
     float: right;
 }
