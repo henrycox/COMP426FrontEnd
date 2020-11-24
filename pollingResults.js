@@ -12,7 +12,6 @@ async function getfromDB() {
 }
 
 const renderGraph = function(data) {
-
     return `<div id="pollresults">
         <h4>Presidential Poll Results:</h4>
         <p>Trump: ${data.president.donaldTrump}</p>

@@ -2,15 +2,10 @@
 const submitPoll = function(event) {
 
     event.preventDefault();
-
-    //console.log('test');
-
     //create data object to submit later in axios request
     let data = {};
-
     //count to make sure every choice is filled out
     let count = 0;
-
     let radios = document.getElementsByName('president');
     //console.log(radios);
     for (let i = 0; i < radios.length; i++) {

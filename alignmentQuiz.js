@@ -222,10 +222,8 @@ async function democrat() {
         url: "https://limitless-spire-89622.herokuapp.com/userPersonalInfo",
         withCredentials: true
     });
-    
     console.log(test);
     */
-
     //changing page
     window.location.href = "democrat.html";
 }
