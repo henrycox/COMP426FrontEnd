@@ -18,9 +18,9 @@ async function getRepresentatives() {
     console.log(userData)
     if(userData.data == null) {
           let firstTime = true;
-          renderRepresentatives(result.data.officials);
+          renderRepresentatives(result.data);
     } else {
-        renderRepsAndNotes(result.data.officials, userData.data);
+        renderRepsAndNotes(result.data, userData.data);
       }
 }
 
@@ -92,7 +92,7 @@ async function sendNoteMessage(noteFile) {
     return result
 }
 
-async function renderRepresentatives(results) {
+async function renderRepresentatives(data) {
     let noteFile = [];
     for(let i=0; i<7; i++){
         let like = "How Likely to get your vote?"
@@ -111,6 +111,7 @@ async function renderRepresentatives(results) {
             notes: noteFile,
         }
     })
+    let results = data.officials;
     for(let i=0; i<7; i++){
         let photo = "";
         if(results[i].photoUrl == null) {
@@ -146,9 +147,10 @@ async function renderRepresentatives(results) {
 
 }
 
-async function renderRepsAndNotes(officials, userData ){
+async function renderRepsAndNotes(offData, userData ){
+    let officials = offData.officals;
     const $reps = $('ul.reps');
-    console.log(officials)
+    console.log(offData);
     
     for(let i=0; i<7; i++){
         let photo = "";
