@@ -118,13 +118,13 @@ async function renderRepresentatives(results) {
         } else {
             photo = results[i].photoUrl;
         }
+        //$reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>');
         $reps.append(`<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs">
         <div class="autocomplete" style="width:300px;">
         <textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea>
-        </div>
+        </div> 
         <br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>`);
         autocomplete(document.getElementById("likely0"), likely);
-        console.log("got here")
     }
 }
 
@@ -143,12 +143,10 @@ async function renderRepsAndNotes(officials, userData ){
     }
 }
 
-
-var likely = ["Definitively", "Very Likely", "Somewhat Likely", "Undecided", "Somewhat Unlikely", "Very Unlikely", "Definitely Not"]
+var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
 
 
 function autocomplete(inp, arr) {
-    console.log("got here")
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
@@ -240,13 +238,10 @@ function autocomplete(inp, arr) {
     }
   }
   /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-  } 
-
-
-
+document.addEventListener("click", function (e) {
+    closeAllLists(e.target);
+});
+} 
 
 
 
