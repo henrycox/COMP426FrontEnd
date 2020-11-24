@@ -118,7 +118,7 @@ async function renderRepresentatives(results) {
         } else {
             photo = results[i].photoUrl;
         }
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes.notes[i].notes +'</textarea><div></li>');
     }
 }
 
