@@ -121,7 +121,7 @@ async function renderRepresentatives(results) {
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+'</textarea><div></li>');
     }
     var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
-        $("#likely0" ).autocomplete({
+        $("#likely0").autocomplete({
             source: likely
           });
 }
