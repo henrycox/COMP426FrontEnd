@@ -297,7 +297,7 @@ li.tile{
     color: black;
 }
 
-li.newsTable{
+li.newsTable.tile{
     display: table;
     margin: 0 auto;
     height: 500px;
