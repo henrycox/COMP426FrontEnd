@@ -124,6 +124,7 @@ async function renderRepresentatives(results) {
         </div>
         <br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>`);
         autocomplete(document.getElementById("likely0"), likely);
+        console.log("got here")
     }
 }
 
