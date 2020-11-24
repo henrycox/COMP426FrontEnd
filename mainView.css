@@ -345,18 +345,6 @@ li.reps{
     margin-bottom: 20px;
 }
 
-.reps h1{
-    font-size: 10px;
-    line-height: 20px;
-    margin: 10px 10px;
-}
-
-.reps h2 {
-    font-size: 10px;
-    line-height: 20px;
-    margin: 10px 10px;
-}
-
 .reps input[type="textfield"] {
         width: 30%;
         padding: 12px 20px;
@@ -368,7 +356,8 @@ li.reps{
 }
 
 .photo{
-    height: 20px;
+    margin-top: 20px;
+    height: 40px;
 }
 
 button.saveAll {
@@ -398,7 +387,10 @@ button.saveAll:hover {
     float: right;
 }
 
-input#notes {
-    height: 50px;
-    width: 60px;
+.notefield {
+    margin-left: 20px;
+}
+
+.likes {
+    margin-left: 20px;
 }
