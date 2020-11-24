@@ -119,7 +119,7 @@ async function renderRepresentatives(data) {
         } else {
             photo = results[i].photoUrl;
         }
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+'</textarea><div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ data.offices[i].name+'</h2><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+'</textarea><div></li>');
     }
     var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
         $("#likely0").autocomplete({
@@ -159,7 +159,7 @@ async function renderRepsAndNotes(offData, userData ){
         } else {
             photo = officials[i].photoUrl;
         }
-        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party+'</h2><h2>'+ officials[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea></div></li>');
+        $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ officials[i].name +'</h1><h2>'+ offData.offices[i].name+'</h2><h2>'+ officials[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea></div></li>');
     }
 
 
