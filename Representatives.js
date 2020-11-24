@@ -112,10 +112,11 @@ async function renderRepresentatives(results) {
         }
     })
     for(let i=0; i<7; i++){
+        let photo = "";
         if(results[i].photoUrl == null) {
-            let photo = 'https://cdn2.iconfinder.com/data/icons/outlined-set-1/29/no_camera-512.png';
+            photo = 'https://cdn2.iconfinder.com/data/icons/outlined-set-1/29/no_camera-512.png';
         } else {
-            let photo = results[i].photoUrl;
+            photo = results[i].photoUrl;
         }
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ results[i].name +'</h1><h2>'+ results[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>');
     }
