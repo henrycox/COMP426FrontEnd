@@ -43,7 +43,7 @@ function returnToHome() {
 
 function loadIntoDom() {
 
-    const $root = $('#root');
+    const $root = $('.body');
 
     //listener for delete button
     $root.on("click", ".delete", deleteAccount);

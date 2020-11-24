@@ -3,22 +3,36 @@
 <head>
     <meta charset="utf-8">
     <title>Update Account</title> <!--working title...-->
-    <!-- link to stylesheet here-->
+    <link href="mainView.css" type="text/css" rel="stylesheet">
 </head>
 <body class = 'body'>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/axios/dist/axios.js"></script>
     <script src="updateAccount.js"></script>
 
-    <div id="root">
+    <div class="banner">
+        <div class="container">
+            <button class="return">Return to Home</button>
 
-        <button class="return">Return to Home</button><br><br>
-        
-        <!-- <input type="text" placeholder="New password..." id="newpassword" value=""><br> -->
-
-        <input type ="textfield" id="newpassword" placeholder='New password...'>
-        <button type="button" class="updatepassword">Submit</button><br><br>
-
-        <button class="delete">Delete Account</button>
+        </div>
     </div>
+
+    <div class="updateAccount">
+        <div class="container">
+                <p>Select a New Password: </p>
+                <input type ="textfield" id="newpassword" placeholder='New password...'>
+                <button class="updatepassword">Submit</button><br><br>
+                <p>Delete your Account: </p>
+                <button class="delete">Delete Account</button>
+            </div>
+        
+        </div>
+    </div>
+
+    
+    <div class="footer">
+
+    </div>
+
 </body>
+</html>
