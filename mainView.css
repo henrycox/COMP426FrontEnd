@@ -297,20 +297,11 @@ li.tile{
     color: black;
 }
 
-/*li.newsTable.tile{
-    display: table;
-    margin: 0 auto;
-    height: 500px;
-}*/
-
-div.newsTable {
-    height: 500px;
-}
-
 ul.news{
     min-width: 50px;
     list-style: none;
     column-count: 3;
+    max-width:100%;
 }
 
 ul.news li{
