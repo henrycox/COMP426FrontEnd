@@ -124,7 +124,7 @@ async function renderRepresentatives(results) {
 
 async function renderRepsAndNotes(officials, userData ){
     const $reps = $('ul.reps');
-
+    console.log(userData)
     
     for(let i=0; i<7; i++){
         let photo = "";
