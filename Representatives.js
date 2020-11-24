@@ -124,9 +124,15 @@ async function renderRepresentatives(results) {
 
 async function renderRepsAndNotes(officials, userData ){
     const $reps = $('ul.reps');
+
     
     for(let i=0; i<7; i++){
-        console.log(userData)
+        let photo = "";
+        if(officials[i].photoUrl == null) {
+            photo = 'https://cdn2.iconfinder.com/data/icons/outlined-set-1/29/no_camera-512.png';
+        } else {
+            photo = officials[i].photoUrl;
+        }
         $reps.append('<li class="reps"><div class="namePhoto"><img class="photo" alt="photo of representative" src ="'+ photo +'"><h1>'+ officials[i].name +'</h1><h2>'+ officials[i].party +'</h2></div><div class="inputs"><textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea><br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea></div></li>');
     }
 }
