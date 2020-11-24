@@ -15,7 +15,7 @@ async function getRepresentatives() {
         url: 'https://limitless-spire-89622.herokuapp.com/userData',
         withCredentials: true,
       });
-
+    console.log(userData)
     if(userData.data == null) {
           let firstTime = true;
           renderRepresentatives(result.data.officials);
