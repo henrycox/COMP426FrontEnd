@@ -251,7 +251,7 @@ function autocomplete(inp, arr) {
 
 $(function() {
     getRepresentatives();
-    autocomplete(document.getElementById("likely0"), countries);
+    autocomplete(document.getElementById("likely0"), likely);
     const $body = $('.body');
     $body.on("click",".saveAll", handleSaveAllPress);
 });
