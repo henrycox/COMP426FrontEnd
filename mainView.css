@@ -297,10 +297,10 @@ li.tile{
     color: black;
 }
 
-.newTable{
+li.newsTable{
     display: table;
     margin: 0 auto;
-    height: 1000px;
+    height: 500px;
 }
 
 ul.news{
