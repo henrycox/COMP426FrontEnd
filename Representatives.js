@@ -61,7 +61,7 @@ async function formURL() {
     return url
 }
 
-async function handleSaveAllPress(event){
+async function handleSaveAllPress(){
     let noteFile = [];
     for(let i=0; i<7; i++){
         let like = document.getElementById("likely" + i);
@@ -142,6 +142,7 @@ async function renderRepresentatives(results) {
           $("#likely6").autocomplete({
             source: likely
           });
+        handleSaveAllPress()
 
 }
 
@@ -160,7 +161,7 @@ async function renderRepsAndNotes(officials, userData ){
     }
 
 
-    var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somehwat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
+    var likely = ["Definitively", "Very Likely", "Likely", "Somewhat Likely", "Undecided", "Somewhat Unlikely", "Unlikely", "Very Unlikely", "Definitively Not"]
         console.log("got here")
         $("#likely0").autocomplete({
             source: likely
