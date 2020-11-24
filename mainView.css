@@ -297,9 +297,13 @@ li.tile{
     color: black;
 }
 
-li.newsTable.tile{
+/*li.newsTable.tile{
     display: table;
     margin: 0 auto;
+    height: 500px;
+}*/
+
+div.newsTable {
     height: 500px;
 }
 
