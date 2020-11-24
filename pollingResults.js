@@ -27,7 +27,7 @@ const renderGraph = function(data) {
         <h4>ME Senator</h4>
         <p>Susan Collins: ${data.MEsenator.susanCollins}</p>
         <p>Sara Gideon: ${data.MEsenator.saraGideon}</p>
-        <h4>Approval</h4>
+        <h4>Should Trump contest results?:</h4>
         <p>Yes: ${data.approval.yes}</p>
         <p>No: ${data.approval.no}</p>
     </div>`;
