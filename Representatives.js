@@ -123,6 +123,7 @@ async function renderRepresentatives(results) {
         <textarea rows="1" cols="30" class="likes" id="likely'+ i +'" placeholder="How Likely to get your vote?">'+userData.notes[i].likelihood +'</textarea>
         </div>
         <br><textarea rows="4" cols="30" class="notefield" id="notes'+ i +'" placeholder="Record your thoughts:">'+ userData.notes[i].notes +'</textarea><div></li>`);
+        autocomplete(document.getElementById("likely0"), likely);
     }
 }
 
@@ -251,7 +252,6 @@ function autocomplete(inp, arr) {
 
 $(function() {
     getRepresentatives();
-    autocomplete(document.getElementById("likely0"), likely);
     const $body = $('.body');
     $body.on("click",".saveAll", handleSaveAllPress);
 });
