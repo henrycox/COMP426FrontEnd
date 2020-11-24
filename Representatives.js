@@ -96,7 +96,7 @@ async function renderRepresentatives(results) {
     const $reps = $('ul.reps');
     const result = await axios({
         method: 'post',
-        url: "https:localhost:3030/userData",
+        url: "http:localhost:3030/userData",
         withCredentials: true,
         data:{
             notes: " ",
