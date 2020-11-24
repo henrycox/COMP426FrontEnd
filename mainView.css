@@ -328,6 +328,16 @@ li.NYT:hover {
 
 /*REPRESENTATIVES ELEMENTS*/
 
+.representatives {
+    background: url(https://cdn.pixabay.com/photo/2016/05/01/21/04/memorial-day-1365982_1280.jpg) 
+    no-repeat center center;
+    background-size: cover;
+    height: 1300px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
 .representatives ul {
     list-style-type: none;
     margin-left: 150px;
